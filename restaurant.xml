@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="css/style.css"?>
+<?xml-stylesheet type="text/xsl" href="style.xsl"?>
+
+<restaurantWebsite>
+    <!-- Header Section -->
+    <header>
+        <logo>
+            <url>images/logo.png</url>
+            <altText>Logo Rumah Makan Lezat</altText>
+        </logo>
+        <navigation>
+            <menu>
+                <item>
+                    <label>Home</label>
+                </item>
+                <item>
+                    <label>About Us</label>
+                </item>
+                <item>
+                    <label>Menu</label>
+                </item> 
+                <item>
+                    <label>Gallery</label>
+                </item>
+                <item>
+                    <label>Contact</label>
+                </item>
+            </menu>
+        </navigation>
+    </header>
+
+    <!-- About Us Section -->
+    <about>
+        <name>Rumah Makan Lezat</name>
+        <description>
+            Rumah Makan Lezat berdiri sejak tahun 1990, menyajikan hidangan tradisional Indonesia dengan cita rasa autentik.
+            Kami menggunakan bahan-bahan segar pilihan untuk memberikan pengalaman kuliner terbaik kepada pelanggan kami.
+        </description>
+        <vision>
+            Menjadi rumah makan terbaik yang menyatukan keluarga dan teman melalui makanan yang lezat dan suasana yang nyaman.
+        </vision>
+        <mission>
+            <item>Menyediakan hidangan berkualitas tinggi dengan bahan segar.</item>
+            <item>Memberikan layanan pelanggan yang ramah dan profesional.</item>
+            <item>Mendukung komunitas lokal melalui bahan baku dari petani setempat.</item>
+        </mission>
+    </about>
+
+    <!-- Slideshow Section -->
+    <slideshow>
+    <image >
+        <url>images/slide1.jpg</url>
+        <caption>Hidangan spesial kami: Ayam Bakar Rempah</caption>
+    </image>
+    <image>
+        <url>images/slide2.jpg</url>
+        <caption>Interior rumah makan kami yang nyaman</caption>
+    </image>
+    <image>
+        <url>images/slide3.jpg</url>
+        <caption>Interior rumah makan kami yang nyaman</caption>
+    </image>
+    </slideshow>
+
+    <!-- Contact Section -->
+    <contact>
+        <address>Jalan Kebahagiaan No. 123, Jakarta</address>
+        <phone>+62 21 1234 5678</phone>
+        <email>info@rumahmakanlezat.com</email>
+        <socialMedia>
+            <facebook>https://facebook.com/rumahmakanlezat</facebook>
+            <instagram>https://instagram.com/rumahmakanlezat</instagram>
+            <twitter>https://twitter.com/lezatmakan</twitter>
+        </socialMedia>
+    </contact>
+
+    <!-- Testimonials Section -->
+    <testimonials>
+        <testimonial>
+            <name>Sri Wahyuni</name>
+            <date>2024-01-10</date>
+            <content>
+                Rumah Makan Lezat memang luar biasa! Hidangannya sangat lezat, dan pelayanannya ramah.
+                Saya pasti akan kembali lagi.
+            </content>
+        </testimonial>
+        <testimonial>
+            <name>Budi Santoso</name>
+            <date>2024-01-05</date>
+            <content>
+                Tempat yang sempurna untuk makan bersama keluarga. Anak-anak saya suka menu spesialnya.
+            </content>
+        </testimonial>
+        <testimonial>
+            <name>Rina Ayu</name>
+            <date>2023-12-20</date>
+            <content>
+                Makanan enak, suasana nyaman, dan harga terjangkau. Tidak ada yang mengalahkan Rumah Makan Lezat.
+            </content>
+        </testimonial>
+    </testimonials>
+
+    <!-- Footer Section -->
+   <footer>
+    <div class="footer-container">
+        <div class="footer-copyright">
+            <p><xsl:value-of select="footer/copyright"/></p>
+        </div>
+        <div class="footer-links">
+            <ul>
+                <xsl:for-each select="footer/quickLinks/link">
+                    <li><xsl:value-of select="label"/></li>
+                </xsl:for-each>
+            </ul>
+        </div>
+    </div>
+</footer>
+</restaurantWebsite>
