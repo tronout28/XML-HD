@@ -105,7 +105,7 @@
                     </div>
                 </footer>
 
-                <!-- JavaScript references at the end of body -->
+                <!-- JavaScript -->
                 <script src="js/slideshow.js"></script>
                 <script src="js/scroll-navigation.js"></script>
 
