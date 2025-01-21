@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/css" href="css/style.css"?>
 <?xml-stylesheet type="text/xsl" href="style.xsl"?>
 
-<restaurantWebsite>
+<restaurantWebsite xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <!-- Header Section -->
     <header>
         <logo>
