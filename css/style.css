@@ -22,6 +22,7 @@ html {
 /* Header Styles dengan Animasi */
 header {
     display: flex;
+    
     justify-content: space-between;
     align-items: center;
     background-color: rgba(255, 255, 255, 0.95);
@@ -52,34 +53,34 @@ header nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    gap: 35px;
+    gap: 20px;
 }
 
 header nav ul li a {
-    color: #2c3e50;
     text-decoration: none;
-    font-weight: 500;
-    font-size: 1.1em;
-    padding: 8px 0;
+    color: #333;
+    padding: 10px 15px;
+    transition: all 0.3s ease;
     position: relative;
-    transition: color 0.3s ease;
 }
 
 header nav ul li a::after {
     content: '';
     position: absolute;
-    width: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
     height: 2px;
-    bottom: -2px;
-    left: 0;
-    background-color: #e74c3c;
-    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 header nav ul li a:hover {
-    color: #e74c3c;
+    color: #ff6b6b;
 }
 
+header nav ul li a.active {
+    color: #ff6b6b;
+}
 header nav ul li a:hover::after {
     width: 100%;
 }
@@ -87,9 +88,18 @@ header nav ul li a:hover::after {
 /* About Section dengan Card Effect */
 #about {
     padding: 100px 50px;
-    background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
     position: relative;
+    background: linear-gradient(
+        rgba(255, 255, 255, 0.9), /* Warna putih semi-transparan di atas */
+        rgba(255, 255, 255, 0.7)  /* Warna putih sedikit lebih transparan di bawah */
+    ), 
+    url('../images/cover-6.jpg'); /* Path ke gambar */
+    background-size: cover; /* Gambar menutupi seluruh elemen */
+    background-position: center; /* Gambar diposisikan di tengah */
+    background-repeat: no-repeat; /* Gambar tidak diulang */
 }
+
+
 
 #about h2 {
     font-size: 3.2em;
@@ -154,17 +164,18 @@ header nav ul li a:hover::after {
 }
 
 /* Slideshow dengan Modern Effect */
-/* Slideshow styling */
 #slideshow {
     position: relative;
     max-width: 1200px;
     margin: 0 auto;
     padding: 60px 0;
+    overflow: hidden; /* Prevent content overflow */
 }
 
 .slide {
     display: none;
     animation: fade 1.5s ease-in-out;
+    position: relative; /* Add positioning context */
 }
 
 .slide.active {
@@ -172,22 +183,16 @@ header nav ul li a:hover::after {
 }
 
 .slide img {
-    width: 100%;
-    height: 500px;
-    object-fit: cover;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    width: 900px; /* Lebar tetap */
+    height: 450px; /* Tinggi tetap */
+    object-fit: cover; /* Pastikan gambar tetap proporsional tanpa distorsi */
+    border-radius: 15px; /* Tambahkan sudut melengkung */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Tambahkan efek bayangan */
+    margin: 0 auto; /* Tengah-kan gambar dalam kontainer */
 }
 
-.slide p {
-    text-align: center;
-    margin-top: 15px;
-    font-size: 1.1em;
-    color: #7f8c8d;
-    font-style: italic;
-}
 
-/* Navigation buttons */
+/* Adjust navigation buttons positioning */
 .slideshow-nav {
     position: absolute;
     top: 50%;
@@ -196,11 +201,13 @@ header nav ul li a:hover::after {
     justify-content: space-between;
     padding: 0 20px;
     transform: translateY(-50%);
-    z-index: 1;
+    z-index: 10; /* Increase z-index */
+    pointer-events: none; /* Allow clicking through the container */
 }
 
+/* Tombol navigasi untuk slideshow */
 .prev-btn, .next-btn {
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.8); /* Warna semi-transparan */
     border: none;
     border-radius: 50%;
     width: 40px;
@@ -210,35 +217,51 @@ header nav ul li a:hover::after {
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
+    pointer-events: auto;
+    position: absolute; /* Posisi absolute agar tidak tercampur dengan gambar */
+    top: 50%; /* Posisikan di tengah secara vertikal */
+    transform: translateY(-50%); /* Sesuaikan dengan posisi tengah */
+    z-index: 10; /* Pastikan berada di atas gambar */
 }
 
+/* Tombol Previous */
+.prev-btn {
+    left: -50px; /* Tempatkan di luar sisi kiri gambar */
+}
+
+/* Tombol Next */
+.next-btn {
+    right: -50px; /* Tempatkan di luar sisi kanan gambar */
+}
+
+/* Hover efek untuk tombol */
 .prev-btn:hover, .next-btn:hover {
-    background: rgba(255, 255, 255, 0.95);
-    transform: scale(1.1);
+    background: rgba(0, 0, 0, 0.8); /* Gelapkan warna saat hover */
+    color: #fff;
 }
 
-/* Dots navigation */
 .dots-container {
-    position: absolute;
-    bottom: 20px;
-    width: 100%;
+    position: relative; /* Ubah ke relative agar berada di bawah gambar */
+    margin-top: 20px; /* Tambahkan jarak dari gambar */
     display: flex;
     justify-content: center;
     gap: 10px;
+    z-index: 5; /* Pastikan z-index cukup tinggi */
 }
 
 .dot {
-    width: 12px;
-    height: 12px;
-    background: rgba(255, 255, 255, 0.5);
+    width: 14px;
+    height: 14px;
+    background: rgba(0, 0, 0, 0.3); /* Warna lebih kontras */
+    border: 2px solid #fff; /* Tambahkan border putih agar terlihat di gambar gelap */
     border-radius: 50%;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
 .dot.active {
-    background: #fff;
-    transform: scale(1.2);
+    background: #e74c3c; /* Warna dot aktif lebih menonjol */
+    transform: scale(1.3); /* Efek pembesaran */
 }
 
 @keyframes fade {
@@ -313,51 +336,66 @@ header nav ul li a:hover::after {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Testimonials dengan Card Effect */
 #testimonials {
     padding: 80px 50px;
     background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%);
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 40px;
     max-width: 1400px;
     margin: 0 auto;
 }
 
-#testimonials .testimonial {
-    background: #fff;
-    padding: 35px;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+#testimonials h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.8em;
+    color: #2c3e50;
+}
+
+/* Wrapper untuk testimonial horizontal */
+.testimonials-wrapper {
     display: flex;
-    flex-direction: column;
+    flex-wrap: nowrap; /* Item tidak akan wrap ke baris baru */
+    gap: 20px; /* Jarak antar testimonial */
+    overflow-x: auto; /* Scroll horizontal jika konten meluap */
+    padding: 10px 0; /* Ruang ekstra di atas dan bawah */
+    scrollbar-width: thin; /* Scrollbar tipis untuk browser yang mendukung */
+    scrollbar-color: #ccc transparent; /* Warna scrollbar */
 }
 
-#testimonials .testimonial:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+/* Gaya untuk masing-masing testimonial */
+.testimonial {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 300px; /* Lebar tetap setiap testimonial */
+    flex-shrink: 0; /* Item tidak mengecil jika kontainer penuh */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-#testimonials .testimonial h3 {
+.testimonial:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+.testimonial h3 {
     font-size: 1.3em;
     color: #2c3e50;
     margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-#testimonials .testimonial span {
-    font-size: 0.9em;
+.testimonial h3 span {
+    font-size: 0.7em;
     color: #95a5a6;
-    margin-bottom: 20px;
 }
 
-#testimonials .testimonial p {
+.testimonial p {
     font-size: 1.1em;
     line-height: 1.8;
     color: #34495e;
-    flex-grow: 1;
+    margin: 0;
 }
-
 /* Footer dengan Grid Layout */
 footer {
     background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
@@ -431,39 +469,70 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    header {
+     /* Header */
+     header {
         flex-direction: column;
         padding: 15px;
     }
 
     header nav ul {
         margin-top: 20px;
-        flex-wrap: wrap;
-        justify-content: center;
+        flex-direction: column;  /* Stack menu items vertically */
+        align-items: center;     /* Center align items */
         gap: 15px;
     }
 
+    /* Slideshow */
     .slide img {
-        height: 300px;
-    }
-    
-    .prev-btn, .next-btn {
-        width: 30px;
-        height: 30px;
+        width: 100%; /* Full width for small screens */
+        height: auto; /* Maintain aspect ratio */
+        object-fit: cover; /* Ensures the image covers the container while maintaining aspect ratio */
     }
 
-    #about, 
-    #contact {
+    /* Previous/Next Buttons */
+    .prev-btn, .next-btn {
+        width: 35px;
+        height: 35px;
+        margin: 0 5px; /* Reduce margin on mobile */
+    }
+
+    /* About & Contact Sections */
+    #about, #contact {
         padding: 40px 20px;
     }
 
-    #slideshow img {
-        height: 300px;
+    /* Testimonials */
+    .testimonials-wrapper {
+        flex-direction: column;
+        align-items: center;
     }
 
+    .testimonial {
+        width: 80%;  /* Use larger width for mobile */
+        max-width: 350px; /* Limit width on mobile to avoid stretching */
+        padding: 20px;
+        margin-bottom: 20px;
+        background-color: white;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+    }
+
+    .testimonial h3 {
+        font-size: 1.25rem;
+    }
+
+    /* Slideshow Navigation */
+    .slideshow-nav {
+        top: 45%; /* Adjust to center for mobile */
+        padding: 0 30px; /* Adjust padding for more space */
+    }
+
+    /* Footer */
     .footer-container {
+        display: grid;
         grid-template-columns: 1fr;
         text-align: center;
+        padding: 20px;
     }
 
     .footer-section h3::after {
@@ -472,7 +541,48 @@ footer {
     }
 
     .footer-contact p {
-        justify-content: center;
+        text-align: center;
+    }
+}
+
+/* Larger Screens (min-width: 769px) */
+@media (min-width: 769px) {
+    /* Header */
+    header {
+        flex-direction: row;
+        padding: 20px 40px;
+    }
+
+    header nav ul {
+        flex-direction: row;
+        margin-top: 0;
+    }
+
+    /* Testimonials */
+    .testimonials-wrapper {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 30px;
+    }
+
+    .testimonial {
+        width: 30%; /* Testimonials display in 3 columns */
+        max-width: 350px;
+        margin-bottom: 0;
+    }
+
+    .testimonial h3 {
+        font-size: 1.5rem;
+    }
+
+    /* Slideshow */
+    .slide img {
+        height: 400px; /* Set a fixed height for larger screens */
+    }
+    
+    /* Footer */
+    .footer-container {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 

@@ -7,7 +7,7 @@
     <header>
         <logo>
             <url>images/logo.png</url>
-            <altText>Logo Rumah Makan Lezat</altText>
+            <altText>Delicious Restaurant Logo</altText>
         </logo>
         <navigation>
             <menu>
@@ -19,7 +19,7 @@
                 </item>
                 <item>
                     <label>Menu</label>
-                </item> 
+                </item>
                 <item>
                     <label>Gallery</label>
                 </item>
@@ -32,46 +32,46 @@
 
     <!-- About Us Section -->
     <about>
-        <name>Rumah Makan Lezat</name>
+        <name>Delicious Restaurant</name>
         <description>
-            Rumah Makan Lezat berdiri sejak tahun 1990, menyajikan hidangan tradisional Indonesia dengan cita rasa autentik.
-            Kami menggunakan bahan-bahan segar pilihan untuk memberikan pengalaman kuliner terbaik kepada pelanggan kami.
+            Established in 1990, Delicious Restaurant serves authentic Indonesian traditional dishes.
+            We use fresh, high-quality ingredients to provide the best dining experience for our customers.
         </description>
         <vision>
-            Menjadi rumah makan terbaik yang menyatukan keluarga dan teman melalui makanan yang lezat dan suasana yang nyaman.
+            To become the best restaurant that brings families and friends together through delicious food and a comfortable atmosphere.
         </vision>
         <mission>
-            <item>Menyediakan hidangan berkualitas tinggi dengan bahan segar.</item>
-            <item>Memberikan layanan pelanggan yang ramah dan profesional.</item>
-            <item>Mendukung komunitas lokal melalui bahan baku dari petani setempat.</item>
+            <item>Provide high-quality dishes with fresh ingredients.</item>
+            <item>Deliver friendly and professional customer service.</item>
+            <item>Support the local community by sourcing ingredients from local farmers.</item>
         </mission>
     </about>
 
     <!-- Slideshow Section -->
     <slideshow>
-    <image >
-        <url>images/slide1.jpg</url>
-        <caption>Hidangan spesial kami: Ayam Bakar Rempah</caption>
-    </image>
-    <image>
-        <url>images/slide2.jpg</url>
-        <caption>Interior rumah makan kami yang nyaman</caption>
-    </image>
-    <image>
-        <url>images/slide3.jpg</url>
-        <caption>Interior rumah makan kami yang nyaman</caption>
-    </image>
+        <image>
+            <url>images/slide1.jpg</url>
+            <caption>Our special dish: Spiced Grilled Chicken</caption>
+        </image>
+        <image>
+            <url>images/slide2.jpg</url>
+            <caption>Our cozy restaurant interior</caption>
+        </image>
+        <image>
+            <url>images/slide3.jpg</url>
+            <caption>Our cozy restaurant interior</caption>
+        </image>
     </slideshow>
 
     <!-- Contact Section -->
     <contact>
-        <address>Jalan Kebahagiaan No. 123, Jakarta</address>
+        <address>123 Happiness Street, Jakarta</address>
         <phone>+62 21 1234 5678</phone>
-        <email>info@rumahmakanlezat.com</email>
+        <email>info@deliciousrestaurant.com</email>
         <socialMedia>
-            <facebook>https://facebook.com/rumahmakanlezat</facebook>
-            <instagram>https://instagram.com/rumahmakanlezat</instagram>
-            <twitter>https://twitter.com/lezatmakan</twitter>
+            <facebook>https://facebook.com/deliciousrestaurant</facebook>
+            <instagram>https://instagram.com/deliciousrestaurant</instagram>
+            <twitter>https://twitter.com/deliciousfood</twitter>
         </socialMedia>
     </contact>
 
@@ -81,22 +81,22 @@
             <name>Sri Wahyuni</name>
             <date>2024-01-10</date>
             <content>
-                Rumah Makan Lezat memang luar biasa! Hidangannya sangat lezat, dan pelayanannya ramah.
-                Saya pasti akan kembali lagi.
+                Delicious Restaurant is amazing! The food is super tasty, and the service is friendly.
+                I will definitely come back again.
             </content>
         </testimonial>
         <testimonial>
             <name>Budi Santoso</name>
             <date>2024-01-05</date>
             <content>
-                Tempat yang sempurna untuk makan bersama keluarga. Anak-anak saya suka menu spesialnya.
+                The perfect place to dine with family. My kids love the special menu.
             </content>
         </testimonial>
         <testimonial>
             <name>Rina Ayu</name>
             <date>2023-12-20</date>
             <content>
-                Makanan enak, suasana nyaman, dan harga terjangkau. Tidak ada yang mengalahkan Rumah Makan Lezat.
+                Delicious food, a comfortable atmosphere, and affordable prices. Nothing beats Delicious Restaurant.
             </content>
         </testimonial>
     </testimonials>
