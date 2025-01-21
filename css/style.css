@@ -19,7 +19,7 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Header Styles dengan Animasi */
+/* Header */
 header {
     display: flex;
     
@@ -85,18 +85,18 @@ header nav ul li a:hover::after {
     width: 100%;
 }
 
-/* About Section dengan Card Effect */
+/* About Section */
 #about {
     padding: 100px 50px;
     position: relative;
     background: linear-gradient(
-        rgba(255, 255, 255, 0.9), /* Warna putih semi-transparan di atas */
-        rgba(255, 255, 255, 0.7)  /* Warna putih sedikit lebih transparan di bawah */
+        rgba(255, 255, 255, 0.9),
+        rgba(255, 255, 255, 0.7)
     ), 
-    url('../images/cover-6.jpg'); /* Path ke gambar */
-    background-size: cover; /* Gambar menutupi seluruh elemen */
-    background-position: center; /* Gambar diposisikan di tengah */
-    background-repeat: no-repeat; /* Gambar tidak diulang */
+    url('../images/cover-6.jpg');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
 }
 
 
@@ -163,19 +163,19 @@ header nav ul li a:hover::after {
     font-size: 1.5em;
 }
 
-/* Slideshow dengan Modern Effect */
+/* Slideshow */
 #slideshow {
     position: relative;
     max-width: 1200px;
     margin: 0 auto;
     padding: 60px 0;
-    overflow: hidden; /* Prevent content overflow */
+    overflow: hidden;
 }
 
 .slide {
     display: none;
     animation: fade 1.5s ease-in-out;
-    position: relative; /* Add positioning context */
+    position: relative;
 }
 
 .slide.active {
@@ -183,16 +183,16 @@ header nav ul li a:hover::after {
 }
 
 .slide img {
-    width: 900px; /* Lebar tetap */
-    height: 450px; /* Tinggi tetap */
-    object-fit: cover; /* Pastikan gambar tetap proporsional tanpa distorsi */
-    border-radius: 15px; /* Tambahkan sudut melengkung */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Tambahkan efek bayangan */
-    margin: 0 auto; /* Tengah-kan gambar dalam kontainer */
+    width: 900px;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 15px; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
+    margin: 0 auto; 
 }
 
 
-/* Adjust navigation buttons positioning */
+/* navigation */
 .slideshow-nav {
     position: absolute;
     top: 50%;
@@ -201,13 +201,13 @@ header nav ul li a:hover::after {
     justify-content: space-between;
     padding: 0 20px;
     transform: translateY(-50%);
-    z-index: 10; /* Increase z-index */
-    pointer-events: none; /* Allow clicking through the container */
+    z-index: 10;
+    pointer-events: none; 
 }
 
-/* Tombol navigasi untuk slideshow */
+
 .prev-btn, .next-btn {
-    background: rgba(255, 255, 255, 0.8); /* Warna semi-transparan */
+    background: rgba(255, 255, 255, 0.8); 
     border: none;
     border-radius: 50%;
     width: 40px;
@@ -218,50 +218,49 @@ header nav ul li a:hover::after {
     justify-content: center;
     transition: all 0.3s ease;
     pointer-events: auto;
-    position: absolute; /* Posisi absolute agar tidak tercampur dengan gambar */
-    top: 50%; /* Posisikan di tengah secara vertikal */
-    transform: translateY(-50%); /* Sesuaikan dengan posisi tengah */
-    z-index: 10; /* Pastikan berada di atas gambar */
+    position: absolute; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    z-index: 10; 
 }
 
-/* Tombol Previous */
+
 .prev-btn {
-    left: -50px; /* Tempatkan di luar sisi kiri gambar */
+    left: -50px; 
 }
 
-/* Tombol Next */
+
 .next-btn {
-    right: -50px; /* Tempatkan di luar sisi kanan gambar */
+    right: -50px; 
 }
 
-/* Hover efek untuk tombol */
 .prev-btn:hover, .next-btn:hover {
-    background: rgba(0, 0, 0, 0.8); /* Gelapkan warna saat hover */
+    background: rgba(0, 0, 0, 0.8); 
     color: #fff;
 }
 
 .dots-container {
-    position: relative; /* Ubah ke relative agar berada di bawah gambar */
-    margin-top: 20px; /* Tambahkan jarak dari gambar */
+    position: relative; 
+    margin-top: 20px; 
     display: flex;
     justify-content: center;
     gap: 10px;
-    z-index: 5; /* Pastikan z-index cukup tinggi */
+    z-index: 5;
 }
 
 .dot {
     width: 14px;
     height: 14px;
-    background: rgba(0, 0, 0, 0.3); /* Warna lebih kontras */
-    border: 2px solid #fff; /* Tambahkan border putih agar terlihat di gambar gelap */
+    background: rgba(0, 0, 0, 0.3); 
+    border: 2px solid #fff; 
     border-radius: 50%;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
 .dot.active {
-    background: #e74c3c; /* Warna dot aktif lebih menonjol */
-    transform: scale(1.3); /* Efek pembesaran */
+    background: #e74c3c; 
+    transform: scale(1.3); 
 }
 
 @keyframes fade {
@@ -269,7 +268,7 @@ header nav ul li a:hover::after {
     to {opacity: 1}
 }
 
-/* Contact Section dengan Card Design */
+
 #contact {
     padding: 80px 50px;
     background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
@@ -350,25 +349,25 @@ header nav ul li a:hover::after {
     color: #2c3e50;
 }
 
-/* Wrapper untuk testimonial horizontal */
+
 .testimonials-wrapper {
     display: flex;
-    flex-wrap: nowrap; /* Item tidak akan wrap ke baris baru */
-    gap: 20px; /* Jarak antar testimonial */
-    overflow-x: auto; /* Scroll horizontal jika konten meluap */
-    padding: 10px 0; /* Ruang ekstra di atas dan bawah */
-    scrollbar-width: thin; /* Scrollbar tipis untuk browser yang mendukung */
-    scrollbar-color: #ccc transparent; /* Warna scrollbar */
+    flex-wrap: nowrap; 
+    gap: 20px; 
+    overflow-x: auto; 
+    padding: 10px 0; 
+    scrollbar-width: thin;
+    scrollbar-color: #ccc transparent; 
 }
 
-/* Gaya untuk masing-masing testimonial */
+
 .testimonial {
     background: #f9f9f9;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 300px; /* Lebar tetap setiap testimonial */
-    flex-shrink: 0; /* Item tidak mengecil jika kontainer penuh */
+    width: 300px; 
+    flex-shrink: 0; 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -396,7 +395,7 @@ header nav ul li a:hover::after {
     color: #34495e;
     margin: 0;
 }
-/* Footer dengan Grid Layout */
+
 footer {
     background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
     color: #ecf0f1;
@@ -477,23 +476,23 @@ footer {
 
     header nav ul {
         margin-top: 20px;
-        flex-direction: column;  /* Stack menu items vertically */
-        align-items: center;     /* Center align items */
+        flex-direction: column;  
+        align-items: center;     
         gap: 15px;
     }
 
     /* Slideshow */
     .slide img {
-        width: 100%; /* Full width for small screens */
-        height: auto; /* Maintain aspect ratio */
-        object-fit: cover; /* Ensures the image covers the container while maintaining aspect ratio */
+        width: 100%; 
+        height: auto; 
+        object-fit: cover; 
     }
 
     /* Previous/Next Buttons */
     .prev-btn, .next-btn {
         width: 35px;
         height: 35px;
-        margin: 0 5px; /* Reduce margin on mobile */
+        margin: 0 5px; 
     }
 
     /* About & Contact Sections */
@@ -508,8 +507,8 @@ footer {
     }
 
     .testimonial {
-        width: 80%;  /* Use larger width for mobile */
-        max-width: 350px; /* Limit width on mobile to avoid stretching */
+        width: 80%;  
+        max-width: 350px; 
         padding: 20px;
         margin-bottom: 20px;
         background-color: white;
@@ -523,8 +522,8 @@ footer {
 
     /* Slideshow Navigation */
     .slideshow-nav {
-        top: 45%; /* Adjust to center for mobile */
-        padding: 0 30px; /* Adjust padding for more space */
+        top: 45%; 
+        padding: 0 30px; 
     }
 
     /* Footer */
@@ -566,7 +565,7 @@ footer {
     }
 
     .testimonial {
-        width: 30%; /* Testimonials display in 3 columns */
+        width: 30%; 
         max-width: 350px;
         margin-bottom: 0;
     }
@@ -577,7 +576,7 @@ footer {
 
     /* Slideshow */
     .slide img {
-        height: 400px; /* Set a fixed height for larger screens */
+        height: 400px; 
     }
     
     /* Footer */
