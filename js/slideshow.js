@@ -14,10 +14,9 @@ document.addEventListener('DOMContentLoaded', function() {
         // Create navigation buttons
         const nav = document.createElement('div');
         nav.className = 'slideshow-nav';
-        nav.innerHTML = `
-            <button class="prev-btn">❮</button>
-            <button class="next-btn">❯</button>
-        `;
+        nav.innerHTML = 
+            `<button class="prev-btn">❮</button>
+            <button class="next-btn">❯</button>`;
         
         // Create dots
         const dotsContainer = document.createElement('div');
@@ -81,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function startSlideshow() {
         slideshowInterval = setInterval(() => {
             showSlide(slideIndex + 1);
-        }, 5000); // Change slide every 5 seconds
+        }, 3000); // Change slide every 3 seconds
     }
     
     function stopSlideshow() {
@@ -92,4 +91,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const slideshowContainer = document.getElementById('slideshow');
     slideshowContainer.addEventListener('mouseenter', stopSlideshow);
     slideshowContainer.addEventListener('mouseleave', startSlideshow);
+
+    
 });

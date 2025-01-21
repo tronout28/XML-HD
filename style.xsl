@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-
-    <!-- Template untuk mengubah elemen root <restaurantWebsite> -->
     <xsl:template match="/restaurantWebsite">
         <html>
             <head>
@@ -16,9 +14,11 @@
                     </div>
                     <nav>
                         <ul>
-                            <xsl:for-each select="header/navigation/menu/item">
-                                <li><xsl:value-of select="label"/></li>
-                            </xsl:for-each>
+                            <li><a href="#" class="active">Home</a></li>
+                            <li><a href="#about">About Us</a></li>
+                            <li><a href="#slideshow">Gallery</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                            <li><a href="#testimonials">Testimonials</a></li>
                         </ul>
                     </nav>
                 </header>
@@ -66,7 +66,7 @@
                 <!-- Testimonials Section -->
                 <section id="testimonials">
                     <h2>Customer Testimonials</h2>
-                    <div class="testimonials-container">
+                    <div class="testimonials-wrapper">
                         <xsl:for-each select="testimonials/testimonial">
                             <div class="testimonial">
                                 <h3><xsl:value-of select="name"/> <span>(<xsl:value-of select="date"/>)</span></h3>
@@ -86,9 +86,11 @@
                         <div class="footer-section footer-links">
                             <h3>Quick Links</h3>
                             <ul>
-                                <xsl:for-each select="header/navigation/menu/item">
-                                    <li><xsl:value-of select="label"/></li>
-                                </xsl:for-each>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#about">About Us</a></li>
+                                <li><a href="#slideshow">Gallery</a></li>
+                                <li><a href="#contact">Contact</a></li>
+                                <li><a href="#testimonials">Testimonials</a></li>
                             </ul>
                         </div>
                         <div class="footer-section footer-contact">
@@ -105,6 +107,8 @@
 
                 <!-- JavaScript references at the end of body -->
                 <script src="js/slideshow.js"></script>
+                <script src="js/scroll-navigation.js"></script>
+
             </body>
         </html>
     </xsl:template>
