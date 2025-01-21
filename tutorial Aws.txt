@@ -1,0 +1,12 @@
+link youtube :
+
+https://www.youtube.com/watch?v=KVKDT1cmYLs
+
+https://www.youtube.com/watch?v=y8sdPvYJDQU
+
+https://www.youtube.com/watch?v=kxnSESgHuRM
+
+https://www.youtube.com/watch?v=9GiPK14JqtU
+
+https://github.com/alainsahli/spring-cloud-aws-reference-app/blob/master/src/main/resources/org/springframework/cloud/aws/sample/aws-config.xml
+
