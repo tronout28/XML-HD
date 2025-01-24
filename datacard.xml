@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<restaurantWebsite>
+    <header>
+        <logo>
+            <url>logo.png</url>
+            <altText>Restaurant Logo</altText>
+        </logo>
+    </header>
+    <about>
+        <namec>Rumah Makan Lezat</namec>
+        <description>Kami menyediakan makanan berkualitas tinggi dengan rasa yang lezat.</description>
+        <vision>Visi kami adalah menjadi pilihan utama masyarakat.</vision>
+        <mission>
+            <item>Menyediakan makanan sehat</item>
+            <item>Memberikan pelayanan terbaik</item>
+            <item>Memastikan kepuasan pelanggan</item>
+        </mission>
+    </about>
+    <slideshow>
+        <image>
+            <url>image1.jpg</url>
+            <caption>Delicious Food</caption>
+        </image>
+        <image>
+            <url>image2.jpg</url>
+            <caption>Fresh Ingredients</caption>
+        </image>
+    </slideshow>
+    <contact>
+        <cards>
+            <card>
+                <title>Makanan Favorit</title>
+                <description>Menu terbaik kami yang selalu menjadi favorit pelanggan.</description>
+                <image>food1.jpg</image>
+            </card>
+            <card>
+                <title>Pelayanan Terbaik</title>
+                <description>Staf ramah yang selalu siap melayani Anda.</description>
+                <image>service.jpg</image>
+            </card>
+            <card>
+                <title>Lingkungan Nyaman</title>
+                <description>Restoran dengan suasana yang nyaman dan bersih.</description>
+                <image>ambience.jpg</image>
+            </card>
+        </cards>
+    </contact>
+</restaurantWebsite>

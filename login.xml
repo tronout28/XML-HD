@@ -5,13 +5,13 @@
     <!-- Login Page Layout -->
     <header>
         <logo>
-            <url>images/logo.png</url>
+            <url>images/logobaju.png</url>
             <altText>Delicious Restaurant Logo</altText>
         </logo>
     </header>
 
     <content>
-        <title>Login</title>
+        
         <form>
             <input>
                 <type>text</type>
