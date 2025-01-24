@@ -1,12 +1,21 @@
 <?php
-include 'db_connection.php';
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: POST, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type");
+
+if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
+    http_response_code(200);
+    exit();
+}
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    include '../services/db-connection.php';
+
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    // Query untuk mengecek email dan password
-    $sql = "SELECT * FROM user WHERE email = ? AND password = ? AND role = 'admin'";
+    // Query untuk mengecek email dan password admin
+    $sql = "SELECT * FROM users WHERE email = ? AND password = ? AND role = 'admin'";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("ss", $email, $password);
     $stmt->execute();
@@ -23,10 +32,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $conn->close();
 }
 ?>
-
-<!-- Form Login Admin -->
-<form method="POST" action="login_admin.php">
-    <input type="email" name="email" placeholder="Email" required><br>
-    <input type="password" name="password" placeholder="Password" required><br>
-    <button type="submit">Login</button>
-</form>
