@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="history.xsl"?>
+
+
+<orders>
+    <order>
+        <orderNumber>25610235901</orderNumber>
+        <orderDate>Mar 18, 2023</orderDate>
+        <totalAmount>$859.00</totalAmount>
+        <shipTo>Rajkot, Gujarat, India</shipTo>
+        <deliveryDate>May 10</deliveryDate>
+        <product>
+            <name>OnePlus 12R (Iron Gray, 8GB RAM, 256GB Storage)</name>
+            <price>$859.00</price>
+            <returnEligible>Eligible through July 12, 2023</returnEligible>
+            <image>oneplus_12r.png</image>
+        </product>
+    </order>
+    <order>
+        <orderNumber>25610235902</orderNumber>
+        <orderDate>Jan 21, 2022</orderDate>
+        <totalAmount>$1200.00</totalAmount>
+        <shipTo>Rajkot, Gujarat, India</shipTo>
+        <deliveryDate>May 10</deliveryDate>
+        <product>
+            <name>Apple 2023 MacBook Pro (16-inch, M3 Max chip with 16-core CPU, 48GB Unified Memory, 1TB) - Space Black</name>
+            <price>$1200.00</price>
+            <returnEligible>Eligible through July 12, 2023</returnEligible>
+            <image>macbook_pro.png</image>
+        </product>
+    </order>
+</orders>
