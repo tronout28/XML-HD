@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="css/style.css"?>
+<?xml-stylesheet type="text/xsl" href="style.xsl"?>
+
+<restaurantWebsite xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    <!-- Header Section -->
+    <header>
+        <logo>
+            <url>images/logobaju.png</url>
+            <altText>Delicious Restaurant Logo</altText>
+        </logo>
+        <navigation>
+            <menu>
+                <item>
+                    <label>Home</label>
+                </item>
+                <item>
+                    <label>About Us</label>
+                </item>
+                <item>
+                    <label>clothes</label>
+                </item>
+                <item>
+                    <label>Shoes</label>
+                </item>
+                
+            </menu>
+        </navigation>
+    </header>
+    <slideshow>
+        <image>
+            <url>images/slide1.png</url>
+            
+        </image>
+        <image>
+            <url>images/slide2.png</url>
+            
+        </image>
+        <image>
+            <url>images/slide3.png</url>
+            
+        </image>
+    </slideshow>
+
+    <contact>
+        <image>
+            <url>images/slide1.png</url>  
+        </image>
+        <title>Stylish Shoes</title>
+        <description>Experience unmatched comfort and style with our latest shoe collection.</description>
+        <link>https://example.com/shoes</link>
+    </contact>
+    <contact>
+        <image>
+            <url>images/slide2.png</url>  
+        </image>
+        <title>Classic Jackets</title>
+        <description>Keep warm and stay classy with our premium jackets.</description>
+        <link>https://example.com/jackets</link>
+    </contact>
+    <contact>
+        <image>
+            <url>images/slide3.png</url>  
+        </image>
+        <title>Elegant Dresses</title>
+        <description>Discover our exclusive range of elegant dresses for any occasion.</description>
+        <link>https://example.com/dresses</link>
+    </contact>
+
+
+    <!-- Testimonials Section -->
+    <testimonials>
+        <testimonial>
+            <name>Sri Wahyuni</name>
+            <date>2024-01-10</date>
+            <content>
+                Delicious Restaurant is amazing! The food is super tasty, and the service is friendly.
+                I will definitely come back again.
+            </content>
+        </testimonial>
+        <testimonial>
+            <name>Budi Santoso</name>
+            <date>2024-01-05</date>
+            <content>
+                The perfect place to dine with family. My kids love the special menu.
+            </content>
+        </testimonial>
+        <testimonial>
+            <name>Rina Ayu</name>
+            <date>2023-12-20</date>
+            <content>
+                Delicious food, a comfortable atmosphere, and affordable prices. Nothing beats Delicious Restaurant.
+            </content>
+        </testimonial>
+    </testimonials>
+
+    <!-- Footer Section -->
+   <footer>
+    <div class="footer-container">
+        <div class="footer-copyright">
+            <p><xsl:value-of select="footer/copyright"/></p>
+        </div>
+        <div class="footer-links">
+            <ul>
+                <xsl:for-each select="footer/quickLinks/link">
+                    <li><xsl:value-of select="label"/></li>
+                </xsl:for-each>
+            </ul>
+        </div>
+    </div>
+</footer>
+</restaurantWebsite>

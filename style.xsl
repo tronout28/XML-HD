@@ -2,8 +2,9 @@
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <xsl:template match="/restaurantWebsite">
         <html>
-            <head>
-                <title>Restaurant Website</title>
+             <head>
+                <title>Shoes</title>
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"/>
                 <link rel="stylesheet" type="text/css" href="css/style.css"/>
             </head>
             <body>
@@ -16,10 +17,9 @@
                         <ul>
                             <li><a href="#" class="active">Home</a></li>
                             <li><a href="#about">About Us</a></li>
-                            <li><a href="#slideshow">Gallery</a></li>
-                            <li><a href="#contact">Contact</a></li>
-                            <li><a href="#testimonials">Testimonials</a></li>
-                            <li><a href="/XML-HD/catalog.xml" target="_blank">Catalog</a></li>
+                            <li><a href="#slideshow">Clothes</a></li>
+                            <li><a href="#contact">Shoes</a></li>
+                          
                         </ul>
                     </nav>
                 </header>
@@ -50,17 +50,20 @@
                 </section>
 
                 <!-- Contact Section -->
-                <section id="contact">
-                    <h2>Contact Us</h2>
-                    <p>Address: <xsl:value-of select="contact/address"/></p>
-                    <p>Phone: <xsl:value-of select="contact/phone"/></p>
-                    <p>Email: <a href="mailto:{contact/email}"><xsl:value-of select="contact/email"/></a></p>
-                    <div class="social-media">
-                        <ul>
-                            <li><a href="{contact/socialMedia/facebook}" class="facebook">Facebook</a></li>
-                            <li><a href="{contact/socialMedia/instagram}" class="instagram">Instagram</a></li>
-                            <li><a href="{contact/socialMedia/twitter}" class="twitter">Twitter</a></li>
-                        </ul>
+                <section id="contact" class="container my-5">
+                    <h2 class="text-center mb-4">Recommended for You</h2>
+                    <div class="row">
+                        <xsl:for-each select="contact">
+                            <div class="col-md-4 mb-4">
+                                <div class="card">
+                                   <img src="{image/url}" class="card-img-top" alt="{title}"/>
+                                    <div class="card-body">
+                                        <h5 class="card-title"><xsl:value-of select="title"/></h5>
+                                        <p class="card-text"><xsl:value-of select="description"/></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </xsl:for-each>
                     </div>
                 </section>
 
