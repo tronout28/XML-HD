@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="register.xsl"?>
+
+<registerPage xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    <header>
+        <logo>
+            <url>images/logobaju.png</url>
+            <altText>Delicious Restaurant Logo</altText>
+        </logo>
+    </header>
+
+    <content>
+        <form>
+            <input>
+                <type>name</type>
+                <placeholder>Name</placeholder>
+                <required>true</required>
+            </input>
+            <input>
+                <type>email</type>
+                <placeholder>Email</placeholder>
+                <required>true</required>
+            </input>
+            <input>
+                <type>password</type>
+                <placeholder>Password</placeholder>
+                <required>true</required>
+            </input>
+            
+            <button>
+                <type>submit</type>
+                <label>Register</label>
+            </button>
+        </form>
+        <additionalInfo>
+            <login>
+                Already have an account? <a href="login.html">Login here</a>
+            </login>
+        </additionalInfo>
+    </content>
+</registerPage>
