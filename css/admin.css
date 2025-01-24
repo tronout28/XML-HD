@@ -1,0 +1,52 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+header column {
+    font-weight: bold;
+    background-color: #333;
+    color: #fff;
+    text-align: left;
+    padding: 8px;
+}
+
+.row {
+    background-color: #f9f9f9;
+}
+
+.row:nth-child(even) {
+    background-color: #eee;
+}
+
+.row no,
+.row name,
+.row email,
+.row actions {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.actions action[type="edit"] {
+    color: #fff;
+    background-color: #007bff;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-right: 5px;
+}
+
+.actions action[type="delete"] {
+    color: #fff;
+    background-color: #dc3545;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 4px;
+}

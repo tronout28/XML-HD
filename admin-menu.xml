@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="admin-menu.xsl"?>
+<menu-management>
+ <menu>
+        <no>1</no>
+        <image>nike-airmax.jpg</image>
+        <name>Nike Air Max</name>
+        <price>1500000</price>
+        <description>Sepatu olahraga dengan bantalan udara untuk kenyamanan ekstra</description>
+        <size>42</size>
+    </menu>
+    <menu>
+        <no>2</no>
+        <image>adidas-ultraboost.jpg</image>
+        <name>Adidas Ultraboost</name>
+        <price>1800000</price>
+        <description>Sepatu lari premium dengan teknologi Boost untuk performa optimal</description>
+        <size>43</size>
+    </menu>
+    <menu>
+        <no>3</no>
+        <image>vans-oldskool.jpg</image>
+        <name>Vans Old Skool</name>
+        <price>800000</price>
+        <description>Sepatu kasual dengan desain klasik yang cocok untuk gaya sehari-hari</description>
+        <size>41</size>
+    </menu>
+</menu-management>

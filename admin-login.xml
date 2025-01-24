@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="login.xsl"?>
+
+<loginPage xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    <!-- Login Page Layout -->
+    <header>
+        <logo>
+            <url>images/logo.png</url>
+            <altText>Delicious Restaurant Logo</altText>
+        </logo>
+    </header>
+
+    <content>
+        <title>Login Admin</title>
+        <form>
+            <input>
+                <type>text</type>
+                <placeholder>Email</placeholder>
+                <required>true</required>
+            </input>
+            <input>
+                <type>password</type>
+                <placeholder>Password</placeholder>
+                <required>true</required>
+            </input>
+            <button>
+                <type>submit</type>
+                <label>Login</label>
+            </button>
+        </form>
+        <additionalInfo>
+            <register>
+                Don't have an account? <a href="register.html">Register here</a>
+            </register>
+        </additionalInfo>
+    </content>
+</loginPage>
