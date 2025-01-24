@@ -7,6 +7,7 @@
             <head>
                 <title>Login Page</title>
                 <link rel="stylesheet" type="text/css" href="css/login.css" />
+                <script src="js/login-admin.js"></script>
             </head>
             <body>
                 <div class="login-container">
