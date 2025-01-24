@@ -26,6 +26,9 @@
                 <item>
                     <label>Contact</label>
                 </item>
+                 <item>
+                    <label>Catalog</label>
+                </item>
             </menu>
         </navigation>
     </header>

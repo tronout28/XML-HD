@@ -19,6 +19,7 @@
                             <li><a href="#slideshow">Gallery</a></li>
                             <li><a href="#contact">Contact</a></li>
                             <li><a href="#testimonials">Testimonials</a></li>
+                            <li><a href="/XML-HD/catalog.xml" target="_blank">Catalog</a></li>
                         </ul>
                     </nav>
                 </header>
@@ -91,6 +92,8 @@
                                 <li><a href="#slideshow">Gallery</a></li>
                                 <li><a href="#contact">Contact</a></li>
                                 <li><a href="#testimonials">Testimonials</a></li>
+                                <li><a href="catalog.xml" target="_blank">Catalog</a></li>
+
                             </ul>
                         </div>
                         <div class="footer-section footer-contact">
