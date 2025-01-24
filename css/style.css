@@ -39,8 +39,8 @@ header .logo {
 }
 
 header .logo img {
-    height: 60px;
-    
+    height: 80px;
+    size: 100px;
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
