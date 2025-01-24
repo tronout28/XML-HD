@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <xsl:include href="sidebar.xsl"/>
-    
+
     <xsl:template match="/">
         <html>
             <head>
@@ -10,12 +10,15 @@
             </head>
             <body>
                 <div class="admin-container">
+                    <!-- Panggil Sidebar -->
                     <xsl:call-template name="sidebar"/>
+
                     <div class="main-content">
                         <div class="header">
                             <h1>Product Management</h1>
-                            <button class="add-new">Add New Product</button>
+                            <a href="admin-add.xml" class="add-new">Add Product</a>
                         </div>
+
                         <table>
                             <thead>
                                 <tr>
@@ -29,6 +32,7 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                <!-- Menampilkan data menu dari XML -->
                                 <xsl:for-each select="menu-management/menu">
                                     <tr>
                                         <td><xsl:value-of select="no"/></td>

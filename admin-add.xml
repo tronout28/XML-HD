@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="admin-add.xsl"?>
+<data>
+    <product>
+        <image>example.jpg</image>
+        <name>Sample Product</name>
+        <price>100</price>
+        <description>This is a sample description.</description>
+        <size>M</size>
+    </product>
+</data>
