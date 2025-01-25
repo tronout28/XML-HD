@@ -43,7 +43,7 @@ if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
 $sql = "INSERT INTO products (name, price, image, description, size) VALUES ('$name', $price, '$imageName', '$description', '$size')";
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
-    header('Location: ../admin/dashboard.php'); // Redirect ke halaman admin setelah berhasil
+    header('Location: ../admin-menu.xml'); // Redirect ke halaman admin setelah berhasil
     exit();
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
