@@ -2,7 +2,7 @@
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <xsl:include href="sidebar.xsl"/>
 
-    <xsl:template match="/">
+    <xsl:template match="/menu-management">
         <html>
             <head>
                 <link rel="stylesheet" type="text/css" href="css/admin-menu.css"/>
@@ -32,7 +32,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <!-- Menampilkan data menu dari XML -->
+                                <!-- Perubahan: menggunakan select menu-management/menu -->
                                 <xsl:for-each select="menu-management/menu">
                                     <tr>
                                         <td><xsl:value-of select="no"/></td>
