@@ -17,21 +17,21 @@
                     <!-- Form untuk pengisian data -->
                     <div class="form-container">
                         <h2>Add Product</h2>
-                        <form>
+                        <form action="logic/add-product.php" method="POST" enctype="multipart/form-data">
                             <label for="image">Image:</label>
-                            <input type="text" id="image" name="image" placeholder="Enter image URL" />
+                            <input type="file" id="image" name="image" required="required"/>
 
                             <label for="name">Name:</label>
-                            <input type="text" id="name" name="name" placeholder="Enter product name" />
+                            <input type="text" id="name" name="name" placeholder="Enter product name" required="required"/>
 
                             <label for="price">Price:</label>
-                            <input type="number" id="price" name="price" placeholder="Enter product price" />
+                            <input type="number" id="price" name="price" placeholder="Enter product price" required="required"/>
 
                             <label for="description">Description:</label>
-                            <textarea id="description" name="description" placeholder="Enter product description"></textarea>
+                            <textarea id="description" name="description" placeholder="Enter product description" required="required"></textarea>
 
                             <label for="size">Size:</label>
-                            <select id="size" name="size">
+                            <select id="size" name="size" required="required">
                                 <option value="S">Small</option>
                                 <option value="M">Medium</option>
                                 <option value="L">Large</option>
