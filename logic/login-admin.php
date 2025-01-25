@@ -11,8 +11,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     include '../services/db-connection.php';
 
-    $email = $_POST['email'];
-    $password = $_POST['password'];
+    $email = trim($_POST['email']);
+    $password = trim($_POST['password']);
+
+    if (empty($email) || empty($password)) {
+        echo "Email dan password tidak boleh kosong.";
+        exit();
+    }
 
     // Query untuk mengecek email dan password admin
     $sql = "SELECT * FROM users WHERE email = ? AND password = ? AND role = 'admin'";
@@ -23,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($result->num_rows > 0) {
         $admin = $result->fetch_assoc();
-        echo "Login berhasil sebagai admin! Selamat datang, " . $admin['name'];
+        echo "Login berhasil sebagai admin! Selamat datang, " . htmlspecialchars($admin['name']);
     } else {
         echo "Login gagal! Email atau password salah.";
     }
