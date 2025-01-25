@@ -1,51 +1,33 @@
 <?php
 require_once '../services/db-connection.php';
 
-// Menyiapkan header untuk output XML
-header('Content-Type: application/xml');
+// Create a new XML document
+$xml = new SimpleXMLElement('<?xml version="1.0" encoding="UTF-8"?><contact/>');
 
-// Buat objek DOMDocument untuk menghasilkan XML
-$doc = new DOMDocument();
-$root = $doc->createElement("menu-management");
-$doc->appendChild($root);
-
-// Query untuk mengambil semua produk dari tabel 'products'
+// Execute SQL query to fetch all columns
 $sql = "SELECT * FROM products";
 $result = $conn->query($sql);
 
-// Jika ada hasil, tambahkan elemen ke dalam XML
+// Add products to XML
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
-        $menu = $doc->createElement("menu");
-
-        $no = $doc->createElement("no", $row["id"]);
-        $menu->appendChild($no);
-
-        $image = $doc->createElement("image", $row["image"]);
-        $menu->appendChild($image);
-
-        $name = $doc->createElement("name", $row["name"]);
-        $menu->appendChild($name);
-
-        $price = $doc->createElement("price", $row["price"]);
-        $menu->appendChild($price);
-
-        $description = $doc->createElement("description", $row["description"]);
-        $menu->appendChild($description);
-
-        $size = $doc->createElement("size", $row["size"]);
-        $menu->appendChild($size);
-
-        $root->appendChild($menu);
+        $product = $xml->addChild('product');
+        $product->addChild('id', $row['id']);
+        $product->addChild('name', htmlspecialchars($row['name']));
+        $product->addChild('price', $row['price']);
+        
+        $image = $product->addChild('image');
+        $image->addChild('url', htmlspecialchars($row['image']));
+        
+        $product->addChild('description', htmlspecialchars($row['description']));
+        $product->addChild('size', $row['size']);
+        $product->addChild('title', htmlspecialchars($row['name']));
     }
-} else {
-    $noProducts = $doc->createElement("message", "No products found");
-    $root->appendChild($noProducts);
 }
 
 // Output XML
-echo $doc->saveXML();
+header('Content-Type: application/xml');
+echo $xml->asXML();
 
-// Menutup koneksi database
 $conn->close();
 ?>
