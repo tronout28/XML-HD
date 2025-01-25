@@ -32,19 +32,19 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <!-- Perubahan: menggunakan select menu-management/menu -->
-                                <xsl:for-each select="menu-management/menu">
+                                <!-- Fetch data dari logic/get-product-admin.php -->
+                                <xsl:for-each select="document('logic/get-product-admin.php')/products/product">
                                     <tr>
-                                        <td><xsl:value-of select="no"/></td>
+                                        <td><xsl:value-of select="position()"/></td>
                                         <td>
-                                            <img src="images/{image}" alt="{name}" class="menu-image"/>
+                                            <img src="images/{image/url}" alt="{name}" class="menu-image"/>
                                         </td>
                                         <td><xsl:value-of select="name"/></td>
                                         <td>Rp <xsl:value-of select="price"/></td>
                                         <td><xsl:value-of select="description"/></td>
                                         <td><xsl:value-of select="size"/></td>
                                         <td>
-                                            <a href="admin-edit.xml?no={no}" class="edit">Edit</a>
+                                            <a href="admin-edit.xml?name={name}" class="edit">Edit</a>
                                             <button class="delete">Delete</button>
                                         </td>
                                     </tr>
