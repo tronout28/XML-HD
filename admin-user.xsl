@@ -27,7 +27,7 @@
                             </thead>
                             <tbody>
                                 <xsl:for-each select="user-management/user">
-                                    <tr>
+                                    <tr>    
                                         <td><xsl:value-of select="no"/></td>
                                         <td>
                                             <img src="images/{image}" alt="{name}" class="user-image"/>

@@ -44,7 +44,7 @@
                                         <td><xsl:value-of select="description"/></td>
                                         <td><xsl:value-of select="size"/></td>
                                         <td>
-                                            <button class="edit">Edit</button>
+                                            <a href="admin-edit.xml?no={no}" class="edit">Edit</a>
                                             <button class="delete">Delete</button>
                                         </td>
                                     </tr>
