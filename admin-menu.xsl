@@ -6,6 +6,7 @@
         <html>
             <head>
                 <link rel="stylesheet" type="text/css" href="css/admin-menu.css"/>
+                     <script src="js/delete-product.js" defer="defer"></script>
                 <title>Admin Menu Management</title>
             </head>
             <body>
@@ -45,7 +46,7 @@
                                         <td><xsl:value-of select="size"/></td>
                                         <td>
                                             <a href="admin-edit.xml?name={name}" class="edit">Edit</a>
-                                            <button class="delete">Delete</button>
+                                            <button class="delete" onclick="deleteProduct('{id}')">Delete</button>
                                         </td>
                                     </tr>
                                 </xsl:for-each>

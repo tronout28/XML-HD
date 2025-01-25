@@ -1,16 +1,26 @@
 <?php
 require_once '../services/db-connection.php';
 
-// get form data
-$id = $_POST['id'];
+// Check if the 'id' parameter is set
+if (isset($_POST['id'])) {
+    $id = $_POST['id'];
 
-// prepare and execute SQL query
-$sql = "DELETE FROM products WHERE id=$id";
-if ($conn->query($sql) === TRUE) {
-    echo "Record deleted successfully";
+    // Prepare the SQL query
+    $stmt = $conn->prepare("DELETE FROM products WHERE id = ?");
+    $stmt->bind_param("i", $id); // 'i' indicates the parameter type is integer
+
+    // Execute the query
+    if ($stmt->execute()) {
+        echo "Record deleted successfully";
+    } else {
+        echo "Error deleting record: " . $stmt->error;
+    }
+
+    // Close the statement
+    $stmt->close();
 } else {
-    echo "Error deleting record: " . $conn->error;
+    echo "Invalid request: ID is missing";
 }
 
+// Close the database connection
 $conn->close();
-?>
