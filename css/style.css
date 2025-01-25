@@ -199,9 +199,25 @@ header nav ul li a:hover::after {
     to {opacity: 1}
 }
 
+.order-button {
+    width: 100%;
+    font-family: 'Poppins', Arial, sans-serif;
+    padding: 12px;
+    background: linear-gradient(90deg, #ff6b6b, #ff8787);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.order-button:hover {
+    opacity: 0.9;
+}
+
 #contact {
     padding: 80px 50px;
-    background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
     text-align: center;
 }
 
@@ -209,7 +225,6 @@ header nav ul li a:hover::after {
     max-width: 1000px;
     margin: 0 auto;
     padding: 40px;
-    background: #fff;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
@@ -242,7 +257,6 @@ header nav ul li a:hover::after {
 #contact .social-media a {
     display: inline-block;
     padding: 12px 25px;
-    color: #fff;
     text-decoration: none;
     border-radius: 8px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);

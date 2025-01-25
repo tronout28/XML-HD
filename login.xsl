@@ -5,7 +5,7 @@
     <xsl:template match="/">
         <html>
             <head>
-                <title>Login Page</title>
+                <title><xsl:value-of select="loginPage/content/title" /></title>
                 <link rel="stylesheet" type="text/css" href="css/login.css" />
             </head>
             <body>
@@ -13,6 +13,7 @@
                     <xsl:apply-templates select="loginPage/header" />
                     <xsl:apply-templates select="loginPage/content" />
                 </div>
+                <script src="js/login.js" type="text/javascript"></script>
             </body>
         </html>
     </xsl:template>
@@ -31,29 +32,36 @@
     </xsl:template>
 
     <xsl:template match="content">
-        <h2><xsl:value-of select="title" /></h2>
-        <form>
-            <xsl:for-each select="form/input">
-                <div class="form-group">
-                    <input>
-                        <xsl:attribute name="type">
-                            <xsl:value-of select="type" />
-                        </xsl:attribute>
-                        <xsl:attribute name="placeholder">
-                            <xsl:value-of select="placeholder" />
-                        </xsl:attribute>
-                        <xsl:if test="required = 'true'">
-                            <xsl:attribute name="required">required</xsl:attribute>
-                        </xsl:if>
-                    </input>
-                </div>
-            </xsl:for-each>
-            <button type="submit">
-                <xsl:value-of select="form/button/label" />
-            </button>
-        </form>
-        <div class="additional-info">
-            <xsl:value-of select="additionalInfo/register" disable-output-escaping="yes" />
+        <div class="login-content">
+            <h2><xsl:value-of select="title" /></h2>
+            <form id="loginForm" method="post" action="logic/login-user.php">
+                <xsl:for-each select="form/input">
+                    <div class="form-group">
+                        <input>
+                            <xsl:attribute name="type">
+                                <xsl:value-of select="type" />
+                            </xsl:attribute>
+                            <xsl:attribute name="placeholder">
+                                <xsl:value-of select="placeholder" />
+                            </xsl:attribute>
+                            <xsl:attribute name="name">
+                                <xsl:value-of select="name" />
+                            </xsl:attribute>
+                            <xsl:if test="required = 'true'">
+                                <xsl:attribute name="required">required</xsl:attribute>
+                            </xsl:if>
+                        </input>
+                    </div>
+                </xsl:for-each>
+
+                <button type="submit">
+                    <xsl:value-of select="form/button/label" />
+                </button>
+            </form>
+            <div id="message"></div>
+            <div class="additional-info">
+                <xsl:value-of select="additionalInfo/register" disable-output-escaping="yes" />
+            </div>
         </div>
     </xsl:template>
 </xsl:stylesheet>
