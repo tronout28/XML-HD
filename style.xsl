@@ -5,6 +5,7 @@
              <head>
                 <title>Shoes</title>
                 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"/>
+                <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
                 <link rel="stylesheet" type="text/css" href="css/style.css"/>
             </head>
             <body>
@@ -51,21 +52,30 @@
 
                 <!-- Contact Section -->
                 <section id="contact" class="container my-5">
-                    <h2 class="text-center mb-4">Recommended for You</h2>
+                       <h2 class="text-center mb-4">Recommended for You</h2>
                     <div class="row">
-                        <xsl:for-each select="contact">
+                        <xsl:for-each select="document('logic/get-product.php')/products/product">
                             <div class="col-md-4 mb-4">
                                 <div class="card">
-                                   <img src="{image/url}" class="card-img-top" alt="{title}"/>
+                                    <img src="{image}" class="card-img-top" alt="{title}"/>
                                     <div class="card-body">
                                         <h5 class="card-title"><xsl:value-of select="title"/></h5>
                                         <p class="card-text"><xsl:value-of select="description"/></p>
+                                        <p class="card-text"><strong>Price: $<xsl:value-of select="price"/></strong></p>
+                                        <button type="button" 
+                                                class="btn btn-primary order-button" 
+                                                data-product-id="{id}" 
+                                                onclick="confirmOrder('{title}')">
+                                            Order Now
+                                        </button>
                                     </div>
                                 </div>
                             </div>
                         </xsl:for-each>
                     </div>
                 </section>
+
+
 
                 <!-- Testimonials Section -->
                 <section id="testimonials">
@@ -116,6 +126,64 @@
                 <script src="js/scroll-navigation.js"></script>
 
             </body>
+            <script type="text/javascript">
+                    //<![CDATA[
+                    function confirmOrder(productName) {
+                        Swal.fire({
+                            title: 'purchase confirmation.',
+                            text: 'Do you want to buy this product?',
+                            icon: 'question',
+                            showCancelButton: true,
+                            confirmButtonColor: '#ff6b6b',
+                            cancelButtonColor: '#6c757d',
+                            confirmButtonText: 'Yes',
+                            cancelButtonText: 'No'
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                Swal.fire(
+                                    'Succes!',
+                                    'Order ' + productName + 'has been received.',
+                                    'success'
+                                );
+                            }
+                        });
+                    }
+
+                    // Menambahkan event listener setelah DOM loaded
+                    document.addEventListener('DOMContentLoaded', function() {
+                        const orderButtons = document.querySelectorAll('.order-button');
+                        orderButtons.forEach(button => {
+                            button.addEventListener('click', function() {
+                                const card = this.closest('.menu-card');
+                                const productName = card.dataset.name;
+                                confirmOrder(productName);
+                            });
+                        });
+                    });
+
+                    document.addEventListener('DOMContentLoaded', function () {
+                        const dropdownToggle = document.getElementById('catalogDropdown');
+                        const dropdown = dropdownToggle.closest('.dropdown');
+                        const dropdownMenu = dropdown.querySelector('.dropdown-menu');
+
+                        // Event listener untuk toggle dropdown
+                        dropdownToggle.addEventListener('click', function (e) {
+                            e.preventDefault();
+                            dropdown.classList.toggle('active');
+                            dropdownMenu.classList.toggle('active');
+                        });
+
+                        // Tutup dropdown jika mengklik di luar
+                        document.addEventListener('click', function (e) {
+                            if (!dropdown.contains(e.target)) {
+                                dropdown.classList.remove('active');
+                                dropdownMenu.classList.remove('active');
+                            }
+                        });
+                    });
+
+                    //]]>
+                </script>
         </html>
     </xsl:template>
 

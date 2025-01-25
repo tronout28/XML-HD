@@ -43,29 +43,9 @@
     </slideshow>
 
     <contact>
-        <image>
-            <url>images/slide1.png</url>  
-        </image>
-        <title>Stylish Shoes</title>
-        <description>Experience unmatched comfort and style with our latest shoe collection.</description>
-        <link>https://example.com/shoes</link>
+        <xsl:copy-of select="document('logic/get-product.php')" />
     </contact>
-    <contact>
-        <image>
-            <url>images/slide2.png</url>  
-        </image>
-        <title>Classic Jackets</title>
-        <description>Keep warm and stay classy with our premium jackets.</description>
-        <link>https://example.com/jackets</link>
-    </contact>
-    <contact>
-        <image>
-            <url>images/slide3.png</url>  
-        </image>
-        <title>Elegant Dresses</title>
-        <description>Discover our exclusive range of elegant dresses for any occasion.</description>
-        <link>https://example.com/dresses</link>
-    </contact>
+
 
 
     <!-- Testimonials Section -->
