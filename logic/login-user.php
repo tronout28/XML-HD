@@ -8,6 +8,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
     exit();
 }
 
+session_start(); // Mulai session
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     include '../services/db-connection.php';
 
@@ -19,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     }
 
-    // Query untuk mengecek email dan password admin
+    // Query untuk mengecek email dan password
     $sql = "SELECT * FROM users WHERE email = ? AND password = ? AND role = 'customer'";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("ss", $email, $password);
@@ -27,8 +29,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
-        $admin = $result->fetch_assoc();
-        echo "Login berhasil sebagai customer! Selamat datang, " . htmlspecialchars($admin['name']);
+        $user = $result->fetch_assoc();
+
+        // Simpan user ID dalam session
+        $_SESSION['user_id'] = $user['id'];
+
+        echo "Login berhasil sebagai customer! Selamat datang, " . htmlspecialchars($user['name']);
     } else {
         echo "Login gagal! Email atau password salah.";
     }
