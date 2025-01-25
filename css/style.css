@@ -203,7 +203,7 @@ header nav ul li a:hover::after {
     width: 100%;
     font-family: 'Poppins', Arial, sans-serif;
     padding: 12px;
-    background: linear-gradient(90deg, #ff6b6b, #ff8787);
+    background: linear-gradient(90deg, #71CAC0, #4aa99e);
     border: none;
     border-radius: 8px;
     color: white;
@@ -250,7 +250,6 @@ header nav ul li a:hover::after {
 #contact .social-media ul {
     display: flex;
     justify-content: center;
-    gap: 25px;
     padding: 0;
 }
 

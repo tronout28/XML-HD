@@ -52,30 +52,26 @@
 
                 <!-- Contact Section -->
                 <section id="contact" class="container my-5">
-                       <h2 class="text-center mb-4">Recommended for You</h2>
+                    <h2 class="text-center mb-4">Recommended for You</h2>
                     <div class="row">
-                        <xsl:for-each select="document('logic/get-product.php')/products/product">
+                        <xsl:for-each select="document('logic/get-product.php')/contact/product">
                             <div class="col-md-4 mb-4">
                                 <div class="card">
-                                    <img src="{image}" class="card-img-top" alt="{title}"/>
+                                <img src="{image/url}" class="card-img-top" alt="{name}"/>
                                     <div class="card-body">
-                                        <h5 class="card-title"><xsl:value-of select="title"/></h5>
+                                        <h5 class="card-title"><xsl:value-of select="name"/></h5>
                                         <p class="card-text"><xsl:value-of select="description"/></p>
-                                        <p class="card-text"><strong>Price: $<xsl:value-of select="price"/></strong></p>
-                                        <button type="button" 
-                                                class="btn btn-primary order-button" 
-                                                data-product-id="{id}" 
-                                                onclick="confirmOrder('{title}')">
+                                        <p class="card-text">Price: $<xsl:value-of select="price"/></p>
+                                        <p class="card-text">Size: <xsl:value-of select="size"/></p>
+                                        <button type="button" class="order-button" onclick="confirmOrder('{name}')">
                                             Order Now
                                         </button>
                                     </div>
-                                </div>
+                                </div>  
                             </div>
                         </xsl:for-each>
                     </div>
                 </section>
-
-
 
                 <!-- Testimonials Section -->
                 <section id="testimonials">
