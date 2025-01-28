@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
     messageContainer.id = 'message';
     loginForm.appendChild(messageContainer);
 
-    loginForm.addEventListener('submit', function (e) {
+    loginForm.addEventListener('submit', async function (e) {
         e.preventDefault();
 
         // Reset pesan
@@ -22,31 +22,48 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        const formData = new FormData();
-        formData.append('email', emailInput.value);
-        formData.append('password', passwordInput.value);
+        try {
+            const formData = new FormData();
+            formData.append('email', emailInput.value);
+            formData.append('password', passwordInput.value);
 
-        fetch('logic/login-user.php', {
-            method: 'POST',
-            body: new URLSearchParams(formData),
-        })
-            .then((response) => response.text())
-            .then((data) => {
-                messageContainer.textContent = data;
-                messageContainer.style.display = 'block';
-                messageContainer.style.color = data.includes('berhasil') ? 'green' : 'red';
-
-                if (data.includes('berhasil')) {
-                    setTimeout(() => {
-                        window.location.href = 'dashboard-admin.php';
-                    }, 2000);
-                }
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-                messageContainer.textContent = 'Terjadi kesalahan. Silakan coba lagi.';
-                messageContainer.style.color = 'red';
-                messageContainer.style.display = 'block';
+            const response = await fetch('logic/login-user.php', {
+                method: 'POST',
+                body: formData
             });
+
+            // Log raw response for debugging
+            const rawResponse = await response.text();
+            console.log('Raw response:', rawResponse);
+
+            // Try to parse as JSON
+            let data;
+            try {
+                data = JSON.parse(rawResponse);
+            } catch (parseError) {
+                console.error('JSON Parse Error:', parseError);
+                throw new Error('Invalid response format');
+            }
+
+            console.log('Parsed data:', data);
+
+            messageContainer.textContent = data.message;
+            messageContainer.style.display = 'block';
+            messageContainer.style.color = data.status === 'success' ? 'green' : 'red';
+
+            if (data.status === 'success' && data.userId) {
+                sessionStorage.setItem('userId', data.userId);
+                console.log('User ID stored:', data.userId);
+                
+                setTimeout(() => {
+                    window.location.href = 'home.xml';
+                }, 2000);
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            messageContainer.textContent = 'Terjadi kesalahan. Silakan coba lagi.';
+            messageContainer.style.color = 'red';
+            messageContainer.style.display = 'block';
+        }
     });
 });
