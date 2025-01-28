@@ -1,0 +1,140 @@
+/* General styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 2.8em;
+    color: #444;
+    letter-spacing: 1px;
+}
+
+#historyContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.history-item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.history-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.history-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1em;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.history-header span {
+    font-weight: bold;
+    color: #444;
+}
+
+.product {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.product img {
+    max-width: 200px;
+    border-radius: 10px;
+    object-fit: cover;
+    border: 2px solid #ddd;
+    transition: transform 0.3s ease;
+}
+
+.product img:hover {
+    transform: scale(1.05);
+}
+
+.product-details {
+    flex-grow: 1;
+}
+
+.product-details h2 {
+    font-size: 1.9em;
+    margin-bottom: 12px;
+    color: #444;
+}
+
+.product-details p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.product-details strong {
+    font-weight: bold;
+    color: #333;
+}
+
+.no-history {
+    font-size: 1.2em;
+    text-align: center;
+    color: #888;
+    padding: 30px 0;
+    font-style: italic;
+}
+
+@media screen and (max-width: 768px) {
+    .product {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .product img {
+        max-width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .history-item {
+        padding: 15px;
+    }
+}
+
+/* Styling untuk tombol Back */
+/* Styling untuk header dengan flexbox */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Styling untuk tombol Back */
+.back-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+}
+
+.back-button:hover {
+    background-color: #0056b3;
+}
