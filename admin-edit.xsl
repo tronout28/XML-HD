@@ -59,5 +59,5 @@
     </xsl:template>
 
     <!-- Parameter ID -->
-    <xsl:param name="id" select="'1'"/> <!-- default value for testing -->
+    <xsl:param name="id" select="'1'"/> 
 </xsl:stylesheet>
