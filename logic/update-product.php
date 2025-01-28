@@ -51,7 +51,9 @@ $sql = "UPDATE products SET
     WHERE id=$id";
 
 if ($conn->query($sql) === TRUE) {
-    echo "Record updated successfully";
+    // Setelah berhasil mengupdate, arahkan ke halaman admin-menu.xml
+    header("Location: http://localhost/XML-HD/admin-menu.xml");
+    exit();
 } else {
     echo "Error updating record: " . $conn->error;
 }
