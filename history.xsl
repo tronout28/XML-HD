@@ -31,12 +31,14 @@
                                     <div class="product">
                                         <img>
                                             <xsl:attribute name="src">
+                                                <xsl:text>http://localhost/XML-HD/public/images/</xsl:text>
                                                 <xsl:value-of select="image"/>
                                             </xsl:attribute>
                                             <xsl:attribute name="alt">
                                                 <xsl:value-of select="product_name"/>
                                             </xsl:attribute>
                                         </img>
+
                                         <div class="product-details">
                                             <h2><xsl:value-of select="product_name"/></h2>
                                             <p><strong>Price:</strong> Rp <xsl:value-of select="format-number(price, '#,###.00')"/></p>

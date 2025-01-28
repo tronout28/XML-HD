@@ -58,7 +58,7 @@
                        <xsl:for-each select="document('logic/get-product.php')/contact/product">
                             <div class="col-md-4 mb-4">
                                 <div class="card">
-                                    <img src="{image}" class="card-img-top" alt="{name}"/>
+                                    <img src="http://localhost/XML-HD/public/images/{image/url}" class="card-img-top" alt="{name}"/>
                                     <div class="card-body">
                                         <h5 class="card-title"><xsl:value-of select="name"/></h5>
                                         <p class="card-text"><xsl:value-of select="description"/></p>
@@ -114,7 +114,7 @@
                             <p>Email: <xsl:value-of select="contact/email"/></p>
                         </div>
                         <div class="footer-copyright">
-                            <p>© 2024 Rumah Makan Lezat. All rights reserved.</p>
+                            <p>© 2024 Shoesshop. All rights reserved.</p>
                         </div>
                     </div>
                 </footer>
