@@ -1,91 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    <xsl:output method="html" encoding="UTF-8" indent="yes"/>
     <xsl:template match="/">
         <html>
             <head>
-                <title>Your Orders</title>
-                <style>
-                    body {
-                        font-family: Arial, sans-serif;
-                        background-color: #f9f9f9;
-                        color: #333;
-                        margin: 0;
-                        padding: 0;
-                    }
-                    .container {
-                        max-width: 800px;
-                        margin: 20px auto;
-                        background: #fff;
-                        padding: 20px;
-                        border-radius: 8px;
-                        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                    }
-                    .order {
-                        margin-bottom: 20px;
-                        padding: 15px;
-                        border: 1px solid #ddd;
-                        border-radius: 8px;
-                    }
-                    .order-header {
-                        display: flex;
-                        justify-content: space-between;
-                        margin-bottom: 10px;
-                    }
-                    .order-header div {
-                        font-size: 14px;
-                    }
-                    .product {
-                        display: flex;
-                        margin-top: 10px;
-                    }
-                    .product img {
-                        width: 100px;
-                        height: 100px;
-                        margin-right: 15px;
-                        border-radius: 8px;
-                        border: 1px solid #ddd;
-                    }
-                    .product-details {
-                        font-size: 14px;
-                    }
-                    .product-details h4 {
-                        margin: 0;
-                        font-size: 16px;
-                    }
-                    .actions a {
-                        text-decoration: none;
-                        color: #6200EE;
-                        margin-right: 10px;
-                    }
-                </style>
+                <title>History Records</title>
+                <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+                <script type="text/javascript" src="js/history.js"></script>
             </head>
             <body>
-                <div class="container">
-                    <h1>Your Orders</h1>
-                    <xsl:for-each select="orders/order">
-                        <div class="order">
-                            <div class="order-header">
-                                <div>Order Date: <xsl:value-of select="orderDate"/></div>
-                                <div>Total Amount: <xsl:value-of select="totalAmount"/></div>
-                                <div>Ship To: <xsl:value-of select="shipTo"/></div>
-                                <div>Order #: <xsl:value-of select="orderNumber"/></div>
-                            </div>
-                            <div class="delivery-date">
-                                Delivered <xsl:value-of select="deliveryDate"/>
-                            </div>
-                            <div class="product">
-                                <img src="{product/image}" alt="Product Image"/>
-                                <div class="product-details">
-                                    <h4><xsl:value-of select="product/name"/></h4>
-                                    <div>Return or Replace items: <xsl:value-of select="product/returnEligible"/></div>
-                                    <div class="actions">
-                                        <a href="#">Buy it again</a>
-                                        <a href="#">View Product</a>
+                <div id="historyContainer">
+                    <h1>Your History</h1>
+                    <xsl:choose>
+                        <xsl:when test="count(histories/history) > 0">
+                            <xsl:for-each select="histories/history">
+                                <div class="history-item">
+                                    <div class="history-header">
+                                        <span class="history-id">History ID: <xsl:value-of select="history_id"/></span>
+                                        <span class="product-id">Product ID: <xsl:value-of select="product_id"/></span>
+                                    </div>
+                                    <div class="product">
+                                        <img>
+                                            <xsl:attribute name="src">
+                                                <xsl:value-of select="image"/>
+                                            </xsl:attribute>
+                                            <xsl:attribute name="alt">
+                                                <xsl:value-of select="product_name"/>
+                                            </xsl:attribute>
+                                        </img>
+                                        <div class="product-details">
+                                            <h2><xsl:value-of select="product_name"/></h2>
+                                            <p><strong>Price:</strong> Rp <xsl:value-of select="format-number(price, '#,###.00')"/></p>
+                                            <p><strong>Description:</strong> <xsl:value-of select="description"/></p>
+                                            <p><strong>Size:</strong> <xsl:value-of select="size"/></p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    </xsl:for-each>
+                            </xsl:for-each>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <div class="no-history">No history records found. Please check database connection and data.</div>
+                        </xsl:otherwise>
+                    </xsl:choose>
                 </div>
             </body>
         </html>
