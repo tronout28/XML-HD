@@ -7,10 +7,19 @@
                 <title>History Records</title>
                 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
                 <script type="text/javascript" src="js/history.js"></script>
+                <link rel="stylesheet" type="text/css" href="css/history.css"/>
             </head>
+            <nav>
+                <h1> </h1>
+            </nav>
             <body>
                 <div id="historyContainer">
-                    <h1>Your History</h1>
+                    <div class="header-container">
+                        <!-- Teks Your History di kiri -->
+                        <h1>Your History</h1>
+                        <!-- Tombol Back di kanan -->
+                        <a href="http://localhost/XML-HD/home.xml" class="back-button">Back</a>
+                    </div>
                     <xsl:choose>
                         <xsl:when test="count(histories/history) > 0">
                             <xsl:for-each select="histories/history">

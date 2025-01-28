@@ -3,6 +3,6 @@
 <histories>
     <history>
     <xsl:copy-of select="document('logic/history-user.php')" />
-
+    
     </history>
 </histories>
