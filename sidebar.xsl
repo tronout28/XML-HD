@@ -18,9 +18,6 @@
                     <li >
                         <a href="admin-menu.xml">Product Management</a>
                     </li>
-                    <li>
-                        <a href="admin-user.xml">User Management</a>
-                    </li>
                 </ul>
             </nav>
         </div>
